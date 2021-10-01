@@ -1,39 +1,14 @@
-/*
- * LibreAV - Anti-malware for Android using machine learning
- * Copyright (C) 2020 Project Matris
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
+package com.fyp.antispywareapp.scanners;
 
-package tech.projectmatris.antimalwareapp.scanners;
-
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.content.res.XmlResourceParser;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 
-import tech.projectmatris.antimalwareapp.R;
-import tech.projectmatris.antimalwareapp.activities.AppDetails;
+import com.fyp.antispywareapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,10 +26,6 @@ import java.lang.reflect.Method;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
-import java.util.Date;
-
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
 public class AppScanner extends AsyncTask<Void, String, Void> {
     private WeakReference<Context> contextRef;
@@ -162,53 +133,6 @@ public class AppScanner extends AsyncTask<Void, String, Void> {
         return null;
     }
 
-    @Override
-    protected void onPostExecute(Void aVoid) {
-            if(!skipScan) {
-                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(contextRef.get());
-                String CHANNEL_ID = "channel_100";
-                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(contextRef.get(), CHANNEL_ID);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    String CHANNEL_NAME = "PROJECT MATRIS";
-                    NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
-                    notificationManager.createNotificationChannel(mChannel);
-                }
-                int NOTIFICATION_ID = 100;
-                Intent intent = new Intent(contextRef.get(), AppDetails.class);
-                intent.putExtra("appName", appName);
-                intent.putExtra("packageName", packageName);
-                intent.putExtra("result", prediction);
-                intent.putExtra("prediction", predictionScore);
-                intent.putExtra("scan_mode", "realtime_scan");
-                intent.putStringArrayListExtra("permissionList", appPermissionsList);
-                PendingIntent contentIntent = PendingIntent.getActivity(contextRef.get(), 1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-                if (prediction.equalsIgnoreCase(contextRef.get().getString(R.string.safe))) {
-                    notificationBuilder.setSmallIcon(R.drawable.ic_notification)
-                            .setAutoCancel(true)
-                            .setContentTitle("LibreAV")
-                            .setContentIntent(contentIntent)
-                            .setContentText(appName + contextRef.get().getString(R.string.is) + prediction)
-                            .setPriority(NotificationCompat.PRIORITY_HIGH);
-                    notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
-                } else {
-                    NOTIFICATION_ID = (int) (new Date()).getTime();
-                    Intent uninstallIntent = new Intent(Intent.ACTION_DELETE);
-                    uninstallIntent.setData(Uri.parse("package:" + packageName));
-                    PendingIntent uninstallPendingIntent = PendingIntent.getActivity(contextRef.get(), NOTIFICATION_ID + 1, uninstallIntent, PendingIntent.FLAG_ONE_SHOT);
-                    PendingIntent contentIntent1 = PendingIntent.getActivity(contextRef.get(), NOTIFICATION_ID + 2, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-                    notificationBuilder.setSmallIcon(R.drawable.ic_notification)
-                            .setAutoCancel(true)
-                            .setVibrate(new long[]{250, 250, 250, 250})
-                            .setContentTitle("LibreAV")
-                            .setContentText(appName + contextRef.get().getString(R.string.is) + prediction)
-                            .setContentIntent(contentIntent1)
-                            .setPriority(NotificationCompat.PRIORITY_HIGH)
-                            .addAction(R.drawable.ic_delete_notification, contextRef.get().getString(R.string.uninstall).toUpperCase(), uninstallPendingIntent);
-                    notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
-                }
-            }
-    }
-
     private MappedByteBuffer loadModelFile() throws IOException {
         AssetFileDescriptor fileDescriptor = contextRef.get().getAssets().openFd("saved_model.tflite");
         FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
@@ -218,13 +142,6 @@ public class AppScanner extends AsyncTask<Void, String, Void> {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
     }
 
-    /**
-     * Load the JSON file from assets folder
-     *
-     * @return String containing contents of JSON file
-     * <p>
-     * Borrowed from: https://stackoverflow.com/questions/19945411 (GrIsHu)
-     */
     private String loadJSONFromAsset() {
         String json;
         try {
@@ -243,11 +160,6 @@ public class AppScanner extends AsyncTask<Void, String, Void> {
         return json;
     }
 
-    /**
-     * Get the list of permissions used by the application
-     * <p>
-     * Borrowed from: https://stackoverflow.com/questions/18236801 (Yousha Aleayoub)
-     */
     private static ArrayList<String> getListOfPermissions(final Context context) {
         ArrayList<String> arr = new ArrayList<>();
 

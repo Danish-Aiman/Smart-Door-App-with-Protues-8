@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package tech.projectmatris.antimalwareapp.activities;
+package com.fyp.antispywareapp.activities;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -26,11 +26,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import tech.projectmatris.antimalwareapp.R;
+import com.fyp.antispywareapp.R;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import tech.projectmatris.antimalwareapp.scanners.ScannerTask;
+import com.fyp.antispywareapp.scanners.ScannerTask;
 
 public class ScanActivity extends AppCompatActivity {
     @Override

@@ -1,4 +1,4 @@
-package tech.projectmatris.antimalwareapp.adapters;
+package com.fyp.antispywareapp.adapters;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import tech.projectmatris.antimalwareapp.R;
+import com.fyp.antispywareapp.R;
 
 public class ScanResultAdapter extends RecyclerView.Adapter<ScanResultAdapter.ViewHolder> {
 

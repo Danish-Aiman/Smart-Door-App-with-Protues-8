@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package tech.projectmatris.antimalwareapp.scanners;
+package com.fyp.antispywareapp.scanners;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -38,13 +38,13 @@ import android.preference.PreferenceManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import tech.projectmatris.antimalwareapp.R;
+import com.fyp.antispywareapp.R;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import tech.projectmatris.antimalwareapp.activities.ResultActivity;
-import tech.projectmatris.antimalwareapp.data.AppInfo;
+import com.fyp.antispywareapp.activities.ResultActivity;
+import com.fyp.antispywareapp.data.AppInfo;
 
 
 import org.json.JSONArray;
@@ -309,21 +309,13 @@ public class ScannerTask extends AsyncTask<Void, String, Void> {
         }
         notificationBuilder.setSmallIcon(R.drawable.ic_notification)
                 .setOngoing(true)
-                .setContentTitle("LibreAV")
+                .setContentTitle("Anti-Spyware")
                 .setContentText(contextRef.get().getString(R.string.scanningApplications))
                 .setProgress(0, 0, true);
         notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
 
     }
 
-
-    /**
-     * Load the JSON file from assets folder
-     *
-     * @return String containing contents of JSON file
-     * <p>
-     * Borrowed from: https://stackoverflow.com/questions/19945411 (GrIsHu)
-     */
     private String loadJSONFromAsset() {
         String json;
         try {
@@ -351,11 +343,6 @@ public class ScannerTask extends AsyncTask<Void, String, Void> {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
     }
 
-    /**
-     * Get the list of permissions used by the application
-     * <p>
-     * Borrowed from: https://stackoverflow.com/questions/18236801 (Yousha Aleayoub)
-     */
     private static ArrayList<String> getListOfPermissions(final Context context) {
         ArrayList<String> arr = new ArrayList<>();
 

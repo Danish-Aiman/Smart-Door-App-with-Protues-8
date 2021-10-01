@@ -3,10 +3,70 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/activity_help.xml" value="0.14010416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable-v21/ic_menu_share.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_delete.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_email.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_launcher_background.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_menu_android_black.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_menu_bug_report_black.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_menu_help_black.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_menu_info_black.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_menu_settings_black.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/ic_name.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/progress_bg.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/roundscanbutton.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/drawable/splash_background.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/layout/activity_result.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/layout/activity_scan.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/layout/activity_sign_up2.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/layout/content_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/layout/layout_app_result.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/layout/layout_result_list_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Anti-Spyware/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable-night/app_background.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable-v21/ic_menu_share.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable/app_background.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable/ic_menu_android_black.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable/ic_menu_settings_black.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable/progress_bg.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable/roundscanbutton.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable/roundstopbutton.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/drawable/splash_background.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/activity_app_details.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/activity_help.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/activity_result.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/activity_scan.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/activity_splash.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/app_bar_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/content_main.xml" value="0.2708333333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/layout_app_result.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/layout_result_list_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/layout/nav_header_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/menu/activity_main_drawer.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_app_details.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_help.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_main.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_result.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_scan.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_settings.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_sign_up2.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/activity_splash.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/app_bar_main.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/content_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/layout_app_result.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/layout_result_list_item.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/layout/nav_header_main.xml" value="0.2658514492753623" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/menu/activity_main_drawer.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/xml/settings_pref.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

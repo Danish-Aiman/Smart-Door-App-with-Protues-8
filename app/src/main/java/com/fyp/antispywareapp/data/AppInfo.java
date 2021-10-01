@@ -16,16 +16,20 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package tech.projectmatris.antimalwareapp.data;
+package com.fyp.antispywareapp.data;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.RequiresApi;
+
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Objects;
 
 public class AppInfo implements Parcelable {
     public String appName;
@@ -71,9 +75,10 @@ public class AppInfo implements Parcelable {
         dest.writeList(permissionList);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public Drawable loadIcon(Context context) {
         try {
-            return context.getPackageManager().getPackageArchiveInfo(filePath, 0).applicationInfo.loadIcon(context.getPackageManager());
+            return Objects.requireNonNull(context.getPackageManager().getPackageArchiveInfo(filePath, 0)).applicationInfo.loadIcon(context.getPackageManager());
         } catch (NullPointerException e) {
             e.printStackTrace();
             return null;

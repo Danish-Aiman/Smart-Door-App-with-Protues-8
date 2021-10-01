@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package tech.projectmatris.antimalwareapp.adapters;
+package com.fyp.antispywareapp.adapters;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -36,10 +36,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.nekocode.badge.BadgeDrawable;
-import tech.projectmatris.antimalwareapp.R;
+import com.fyp.antispywareapp.R;
 
-import tech.projectmatris.antimalwareapp.activities.AppDetails;
-import tech.projectmatris.antimalwareapp.data.AppInfo;
+import com.fyp.antispywareapp.data.AppInfo;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -121,19 +120,6 @@ public class AppsAdapter extends RecyclerView.Adapter {
                                                    }
                                                }
             );
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent =new Intent(contextRef.get(), AppDetails.class);
-                    intent.putExtra("appName",appInfo.appName);
-                    intent.putExtra("packageName",appInfo.packageName);
-                    intent.putExtra("result",appInfo.prediction);
-                    intent.putExtra("prediction",appInfo.predictionScore);
-                    intent.putExtra("scan_mode","normal_scan");
-                    intent.putStringArrayListExtra("permissionList", appInfo.permissionList);
-                    contextRef.get().startActivity(intent);
-                }
-            });
 
         }
     }

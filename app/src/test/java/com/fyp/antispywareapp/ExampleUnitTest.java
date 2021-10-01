@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package tech.projectmatris.antimalwareapp;
+package com.fyp.antispywareapp;
 
 import org.junit.Test;
 

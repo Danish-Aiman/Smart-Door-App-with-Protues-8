@@ -16,15 +16,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package tech.projectmatris.antimalwareapp.activities;
+package com.fyp.antispywareapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.MenuItem;
-import tech.projectmatris.antimalwareapp.R;
-import tech.projectmatris.antimalwareapp.adapters.AppsAdapter;
-import tech.projectmatris.antimalwareapp.data.AppInfo;
+import com.fyp.antispywareapp.R;
+import com.fyp.antispywareapp.adapters.AppsAdapter;
+import com.fyp.antispywareapp.data.AppInfo;
 
 import java.util.ArrayList;
 import androidx.appcompat.app.ActionBar;

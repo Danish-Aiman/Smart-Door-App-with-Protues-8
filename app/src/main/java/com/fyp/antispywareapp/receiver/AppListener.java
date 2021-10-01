@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package tech.projectmatris.antimalwareapp.receiver;
+package com.fyp.antispywareapp.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -24,7 +24,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import tech.projectmatris.antimalwareapp.scanners.AppScanner;
+import com.fyp.antispywareapp.scanners.AppScanner;
 
 public class AppListener extends BroadcastReceiver {
     @Override
