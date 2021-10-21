@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- lock_btn_shape from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="oval" >
+	<stroke android:color="#ffffff" android:width="5dp" />
+	<solid android:color="@color/bar_color" />
+</shape>
+

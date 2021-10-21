@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Anti-Spyware</string>
+    <string name="app_name">Smart Doors</string>
     <string name="scan">Scan</string>
     <string name="scanningApplications">Scanning Applications</string>
     <string name="system_app">System App</string>
@@ -15,7 +15,7 @@
     <string name="report">REPORT</string>
     <string name="no_permissions_required">No permissions required!</string>
     <string name="prediction_score">Prediction Score :</string>
-    <string name="malware">Malware</string>
+    <string name="spyware">Spyware</string>
     <string name="safe">Safe</string>
     <string name="risky">Risky</string>
     <string name="unknown">Unknown</string>
@@ -26,13 +26,44 @@
     <string name="permission_denied_message">Permission is required for getting list of files</string>
     <string name="username" translatable="false">Username</string>
     <string name="password" translatable="false">Password</string>
-    <string name="login_account" translatable="false">Login Account</string>
-    <string name="login" translatable="false">LOGIN</string>
-    <string name="create_account" translatable="false">Create Account</string>
+    <string name="login_account" translatable="false">Login</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="create_account" translatable="false">Register</string>
     <string name="fullname" translatable="false">Fullname</string>
     <string name="email" translatable="false">Email</string>
-    <string name="signup" translatable="false">SIGNUP</string>
-    <string name="loginhere" translatable="false">Already have an account?<u>Login Here</u></string>
-    <string name="signuphere" translatable="false">Don\'t have an account? <u>SignUp Here</u></string>
+    <string name="signup" translatable="false">SignUp</string>
+    <string name="loginhere" translatable="false">Already have an account?<u>Login</u></string>
+    <string name="signuphere" translatable="false">Don\'t have an account? <u>Signup</u></string>
     <string name="welcome_users">Welcome Users</string>
+    <string name="layout_login">layout_login</string>
+    <string name="layout_login1">layout_login!</string>
+    <string name="history_img">History</string>
+    <string name="setting_img">Setting</string>
+    <string name="smart_door_img">Smart Door</string>
+    <string name="textview_user">User\'s Control Panel</string>
+    <string name="background">background</string>
+    <string name="user_account">user_account</string>
+    <string name="history_string">History</string>
+    <string name="smartdoor_text">Smart Door</string>
+    <string name="shield_img">Smart Door </string>
+    <string name="scan_string">Scan</string>
+    <string name="setting_string">Setting</string>
+    <string name="entrance_text">Front Entrance</string>
+    <string name="locked_text">Unlocked</string>
+    <string name="lock_text">LOCK</string>
+    <string name="unclock_text_string">UNLOCK</string>
+    <string name="locked_text_string">Lock</string>
+    <string name="realtime_text_string">Realtime Scan</string>
+    <string name="passcode_string">Change Door Passcode</string>
+    <string name="delete_btn_string">Delete Account</string>
+    <string name="delete_key">Delete Key</string>
+    <string name="passcode_key"> Passcode btn</string>
+    <string name="real_time_scan_summary">Automatically scan new apps</string>
+    <string name="real_time_scan_on">Real Time Scan is On</string>
+    <string name="logout_btn_string">Logout Account</string>
+    <string name="logout_key">Logout Btn</string>
+    <string name="door_string">Door Passcode</string>
+    <string name="app_settings">App Settings</string>
+    <string name="real_time_scan">Real Time Scan</string>
+    <string name="is">\u0020is\u0020</string>
 </resources>

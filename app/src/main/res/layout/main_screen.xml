@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+  <ImageView
+      android:id="@+id/user_account_ek1"
+      android:src="@drawable/user_account"
+      android:contentDescription="@string/user_account"
+      android:layout_marginStart="342dp"
+      android:layout_marginTop="52dp"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_marginLeft="342dp" />
+
+  <TextView
+      android:id="@+id/textview_user"
+      android:layout_width="284dp"
+      android:layout_height="62.5dp"
+      android:layout_marginStart="67dp"
+      android:layout_marginTop="145dp"
+      android:fontFamily="@font/arial"
+      android:text="@string/textview_user"
+      android:textColor="@color/white"
+      android:textSize="25sp"
+      android:textStyle="bold"
+      android:layout_marginLeft="67dp" />
+
+  <Button
+      android:id="@+id/history_btn"
+      android:layout_width="133.83dp"
+      android:layout_height="138.14dp"
+      android:layout_marginStart="65dp"
+      android:layout_marginLeft="65dp"
+      android:layout_marginTop="217dp"
+      android:alpha="0.15"
+      android:background="@drawable/dark_btn_shape"
+      android:textSize="15sp"
+      android:textStyle="bold" />
+
+  <ImageView
+      android:id="@+id/history_im"
+      android:layout_width="53dp"
+      android:layout_height="55dp"
+      android:layout_marginStart="79dp"
+      android:layout_marginTop="248dp"
+      android:contentDescription="@string/history_img"
+      android:src="@drawable/history_im"
+      android:layout_marginLeft="79dp" />
+
+
+  <TextView
+      android:id="@+id/history"
+      android:layout_width="125dp"
+      android:layout_height="47.5dp"
+      android:layout_marginStart="79dp"
+      android:layout_marginTop="312dp"
+      android:fontFamily="@font/arial"
+      android:text="@string/history_string"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:textStyle="bold"
+      android:layout_marginLeft="79dp" />
+
+  <Button
+      android:id="@+id/doorlock_btn"
+      android:layout_width="133.83dp"
+      android:layout_height="138.14dp"
+      android:layout_marginStart="234dp"
+      android:layout_marginTop="219dp"
+      android:alpha="0.15"
+      android:background="@drawable/dark_btn_shape"
+      android:layout_marginLeft="234dp" />
+
+  <ImageView android:id="@+id/smartdoor_img"
+      android:src="@drawable/door_handle"
+      android:contentDescription="@string/smart_door_img"
+      android:layout_marginStart="293dp"
+      android:layout_marginTop="239dp"
+      android:layout_width="58dp"
+      android:layout_height="64dp"
+      android:layout_marginLeft="293dp" />
+
+  <TextView
+      android:id="@+id/smartdoor_text"
+      android:layout_width="125dp"
+      android:layout_height="47.5dp"
+      android:layout_marginStart="245dp"
+      android:layout_marginTop="312dp"
+      android:fontFamily="@font/arial"
+      android:text="@string/smartdoor_text"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:textStyle="bold"
+      android:layout_marginLeft="245dp" />
+
+  <Button
+      android:id="@+id/scanButton"
+      android:layout_width="133.83dp"
+      android:layout_height="138.14dp"
+      android:layout_marginStart="65dp"
+      android:layout_marginTop="409dp"
+      android:alpha="0.15"
+      android:background="@drawable/dark_btn_shape"
+      android:layout_marginLeft="65dp" />
+
+  <ImageView
+      android:id="@+id/shield"
+      android:layout_width="53dp"
+      android:layout_height="55dp"
+      android:layout_marginStart="79dp"
+      android:layout_marginTop="431dp"
+      android:contentDescription="@string/shield_img"
+      android:src="@drawable/shield"
+      android:layout_marginLeft="79dp" />
+
+  <TextView
+      android:id="@+id/scan_text"
+      android:layout_width="125dp"
+      android:layout_height="47.5dp"
+      android:layout_marginStart="79dp"
+      android:layout_marginTop="500dp"
+      android:fontFamily="@font/arial"
+      android:text="@string/scan_string"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:textStyle="bold"
+      android:layout_marginLeft="79dp" />
+
+  <Button
+      android:id="@+id/setting_btn"
+      android:layout_width="133.83dp"
+      android:layout_height="138.14dp"
+      android:layout_marginStart="234dp"
+      android:layout_marginTop="409dp"
+      android:alpha="0.15"
+      android:background="@drawable/dark_btn_shape"
+      android:layout_marginLeft="234dp" />
+
+  <ImageView
+      android:id="@+id/setting_img"
+      android:layout_width="58dp"
+      android:layout_height="64dp"
+      android:layout_marginStart="293dp"
+      android:layout_marginTop="431dp"
+      android:contentDescription="@string/setting_img"
+      android:src="@drawable/settings"
+      android:layout_marginLeft="293dp" />
+
+  <TextView
+      android:id="@+id/setting_text"
+      android:layout_width="126dp"
+      android:layout_height="46.5dp"
+      android:layout_marginStart="256dp"
+      android:layout_marginTop="504dp"
+      android:fontFamily="@font/arial"
+      android:text="@string/setting_string"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:textStyle="bold"
+      android:layout_marginLeft="256dp" />
+
+</FrameLayout>

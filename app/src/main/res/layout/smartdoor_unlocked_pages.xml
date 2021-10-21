@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/layout_unlocked"
+            android:layout_width="669dp"
+            android:layout_height="728dp"
+            android:layout_marginStart="-125dp"
+            android:layout_marginTop="-78dp"
+            android:background="@drawable/layout_unlocked_shape" />
+
+        <TextView
+            android:id="@+id/entrance_text_ek1"
+            android:layout_width="303dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/arial"
+            android:text="@string/entrance_text"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/in_circle_ek1"
+            android:layout_width="207.14dp"
+            android:layout_height="207.14dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="226dp"
+            android:background="@drawable/in_circle" />
+
+        <ImageView
+            android:id="@+id/out_circle"
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="184dp"
+            android:alpha="0.23"
+            android:background="@drawable/out_circle" />
+
+        <ImageView
+            android:id="@+id/lock_icon"
+            android:layout_width="93.21dp"
+            android:layout_height="93.21dp"
+            android:layout_marginStart="174dp"
+            android:layout_marginTop="275dp"
+            android:src="@drawable/unlock_icon"
+            />
+
+        <TextView
+            android:id="@+id/locked_text"
+            android:layout_width="111dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="158dp"
+            android:layout_marginTop="382dp"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:text="@string/locked_text"
+            android:textColor="@color/layout_unlocked_color"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/lock_btn"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="568dp"
+            android:background="@drawable/lock_btn_shape"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="@string/lock_text"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:id="@+id/circle_shape"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="500dp"
+            android:background="@drawable/circle_shape" />
+
+        <ImageView
+            android:id="@+id/smartphone_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="194dp"
+            android:layout_marginTop="518dp"
+            android:src="@drawable/smartphone_icon"
+            />
+
+    </FrameLayout>
+</ScrollView>

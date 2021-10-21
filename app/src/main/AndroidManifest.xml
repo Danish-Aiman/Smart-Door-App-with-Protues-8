@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.fyp.antispywareapp">
+    package="com.fyp.smartdoorapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-permission-sdk-23 android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:requestLegacyExternalStorage="true"
@@ -17,12 +19,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:usesCleartextTraffic="true"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="q">
 
         <activity
-            android:name="com.fyp.antispywareapp.loginpage.Login"
+            android:name="com.fyp.smartdoorapp.loginpage.Login"
             android:theme="@style/Theme.Design.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
@@ -33,31 +34,33 @@
         </activity>
 
         <activity
-            android:name="com.fyp.antispywareapp.loginpage.SignUp"
+            android:name="com.fyp.smartdoorapp.loginpage.SignUp"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar"
             />
 
         <activity
-            android:name="com.fyp.antispywareapp.activities.MainActivity"
-            android:label="@string/scan_now"
+            android:name="com.fyp.smartdoorapp.activities.MainActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" >
         </activity>
 
         <activity
-            android:name="com.fyp.antispywareapp.activities.ScanActivity"
+            android:name="com.fyp.smartdoorapp.activities.ScanActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.fyp.antispywareapp.activities.ResultActivity"
-            android:parentActivityName="com.fyp.antispywareapp.activities.MainActivity"
+            android:name="com.fyp.smartdoorapp.activities.ResultActivity"
+            android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.fyp.antispywareapp.activities.MainActivity" />
+                android:value="com.fyp.smartdoorapp.activities.MainActivity" />
         </activity>
 
+        <activity android:name="com.fyp.smartdoorapp.activities.AppDetails"
+            android:theme="@style/AppTheme"/>
+
         <receiver
-            android:name="com.fyp.antispywareapp.receiver.AppListener"
+            android:name="com.fyp.smartdoorapp.receiver.AppListener"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="100">
@@ -65,6 +68,39 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="com.fyp.smartdoorapp.pages.history_pages"
+            android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">
+        </activity>
+
+        <activity
+            android:name="com.fyp.smartdoorapp.pages.smartdoor_unlocked_pages"
+            android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">
+        </activity>
+
+        <activity
+            android:name="com.fyp.smartdoorapp.pages.smartdoor_locked_pages"
+            android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">
+        </activity>
+
+        <activity android:name="com.fyp.smartdoorapp.pages.setting_pages"
+            android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">
+        </activity>
+
+        <receiver
+            android:name="com.fyp.smartdoorapp.receiver.BootCompletedReceiver"
+            android:directBootAware="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.fyp.smartdoorapp.services.RealTimeService"
+            android:enabled="true" />
 
     </application>
 

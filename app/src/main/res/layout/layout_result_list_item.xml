@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ LibreAV - Anti-malware for Android using machine learning
-  ~ Copyright (C) 2020 Project Matris
-  ~
-  ~ This program is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ This program is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:background="@color/bgColor">
+    android:background="@drawable/background">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/itemCard"
@@ -39,7 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/app_background"
+            android:background="@drawable/background"
             android:orientation="horizontal"
             android:padding="5dp">
 
@@ -58,7 +41,8 @@
                 android:layout_marginStart="6dp"
                 android:layout_marginLeft="6dp"
                 android:layout_weight="2"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:id="@+id/itemLabel"
@@ -68,7 +52,7 @@
                     android:maxLines="1"
                     android:text=""
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/mainTextColor" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/itemSecondaryLabel"

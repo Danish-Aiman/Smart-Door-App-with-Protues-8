@@ -5,7 +5,7 @@
     android:layout_marginHorizontal="2dp"
     android:layout_marginBottom="2dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/app_background">
+    android:background="@drawable/background">
     <TextView
         app:layout_constraintTop_toTopOf="parent"
         android:paddingHorizontal="2dp"
@@ -14,7 +14,7 @@
         android:layout_marginBottom="2dp"
         app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/name"
-        android:textColor="@color/secondaryTextColor"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
