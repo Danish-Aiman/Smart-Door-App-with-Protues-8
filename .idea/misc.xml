@@ -140,7 +140,9 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.290625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/antimalwareapp2/app/src/main/res/xml/settings_pref.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/drawable-v21/ic_delete_notification.xml" value="0.290625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.290625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/activity_app_details.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/activity_device_list.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/activity_settings.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/history_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/layout_app_result.xml" value="0.27447916666666666" />
@@ -149,6 +151,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/register_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/setting_pages.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/smartdoor_locked_pages.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/layout/textcolor_pages.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/menu/menu_device_list.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/doorzilla/app/src/main/res/xml/settings_pref.xml" value="0.264" />
       </map>
     </option>

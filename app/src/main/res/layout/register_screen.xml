@@ -41,10 +41,16 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/password" />
 
+      <ImageView
+          android:layout_width="104dp"
+          android:layout_height="94dp"
+          android:layout_marginStart="155dp"
+          android:src="@drawable/logo" />
+
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginTop="75sp"
+          android:layout_marginTop="85sp"
           android:fontFamily="@font/arial"
           android:gravity="center"
           android:text="@string/create_account"

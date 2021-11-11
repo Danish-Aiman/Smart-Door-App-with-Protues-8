@@ -14,8 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fyp.smartdoorapp.connection.DeviceList;
+import com.fyp.smartdoorapp.loginpage.Login;
 import com.fyp.smartdoorapp.pages.history_pages;
 import com.fyp.smartdoorapp.pages.setting_pages;
 import com.fyp.smartdoorapp.pages.smartdoor_locked_pages;
@@ -30,12 +33,13 @@ public class MainActivity extends AppCompatActivity{
     Button scanButton, history_btn, doorlock_btn, setting_btn;
     private Context context = this;
     private boolean withSysApps = false;
+    TextView textview_user;
+    String username = Login.username + " Control Panel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
-
 
         setting_btn = findViewById(R.id.setting_btn);
         setting_btn.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity{
         doorlock_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, smartdoor_locked_pages.class));
+                startActivity(new Intent(MainActivity.this, DeviceList.class));
             }
         });
 
@@ -68,6 +72,9 @@ public class MainActivity extends AppCompatActivity{
                 context.startActivity(new Intent(context, ScanActivity.class).putExtra("withSysApps", withSysApps));
             }
         });
+
+        textview_user = findViewById(R.id.textview_user);
+        textview_user.setText(username);
 
     }
     @Override

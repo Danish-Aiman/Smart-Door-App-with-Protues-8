@@ -12,6 +12,10 @@
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
@@ -38,6 +42,11 @@
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar"
             />
+
+
+        <activity
+            android:name="com.fyp.smartdoorapp.connection.DeviceList"
+            android:theme="@style/AppTheme"/>
 
         <activity
             android:name="com.fyp.smartdoorapp.activities.MainActivity"
@@ -83,6 +92,8 @@
             android:name="com.fyp.smartdoorapp.pages.smartdoor_locked_pages"
             android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">
         </activity>
+
+        <activity android:name="com.fyp.smartdoorapp.connection.dooropen" />
 
         <activity android:name="com.fyp.smartdoorapp.pages.setting_pages"
             android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">

@@ -17,6 +17,7 @@ import android.preference.PreferenceManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fyp.smartdoorapp.activities.MainActivity;
+import com.fyp.smartdoorapp.connection.DeviceList;
 import com.fyp.smartdoorapp.pages.setting_pages;
 import com.fyp.smartdoorapp.services.RealTimeService;
 import com.google.android.material.textfield.TextInputEditText;
@@ -85,7 +86,7 @@ public class Login extends AppCompatActivity{
                             String[] data = new String[2];
                             data[0] = username;
                             data[1] = password;
-                            PutData putData = new PutData("http://192.168.50.173:80/LoginSystem/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.50.173:8080/LoginSystem/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
