@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="horizontal"
+    app:layout_scrollFlags="noScroll">
+
     <TextView
         android:id="@+id/text_item"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingTop="20sp"
-        android:paddingLeft="15sp"
-        android:paddingStart="15sp"
-        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="72dp"
+        android:background="@drawable/background"
         android:fontFamily="@font/arial"
-        android:background="@drawable/background">
+        android:paddingStart="15sp"
+        android:paddingLeft="15sp"
+        android:paddingTop="20sp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"></TextView>
 
-    </TextView>
+
+    <TextView
+        android:id="@+id/text_item2"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@drawable/background"
+        android:fontFamily="@font/arial"
+        android:paddingStart="15sp"
+        android:paddingLeft="15sp"
+        android:paddingTop="20sp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </LinearLayout>

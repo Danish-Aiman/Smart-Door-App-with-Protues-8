@@ -13,40 +13,37 @@ import com.fyp.smartdoorapp.R;
 
 import java.util.ArrayList;
 
-public class RecycleAdapter extends RecyclerView.Adapter {
-    ArrayList<String> history;
+public class Recycle  extends RecyclerView.Adapter {
+    ArrayList<String> histlist;
     Context context;
 
-    public RecycleAdapter(Context context, ArrayList<String> history) {
-        this.history = history;
+    public Recycle(Context context, ArrayList<String> histlist) {
+        this.histlist = histlist;
         this.context = context;
     }
 
     @NonNull @Override public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.textcolor_pages, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return  viewHolder;
+        return new ViewHolder(view);
     }
 
     @Override public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ViewHolder myholder = (ViewHolder) holder;
-        myholder.text_item.setText(history.get(position));
-        //myholder.text_item2.setText(history.get(position));
+        myholder.text_item2.setText(histlist.get(position));
     }
 
     @Override public int getItemCount() {
 
-        return history.size()-1;
+        return histlist.size();
     }
 
     public class  ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView text_item, text_item2;
+        TextView text_item2;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            text_item = itemView.findViewById(R.id.text_item);
             text_item2 = itemView.findViewById(R.id.text_item2);
         }
     }

@@ -19,7 +19,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.fyp.smartdoorapp.R;
+import com.fyp.smartdoorapp.activities.MainActivity;
 import com.fyp.smartdoorapp.connection.DeviceList;
+import com.fyp.smartdoorapp.loginpage.Login;
 import com.fyp.smartdoorapp.loginpage.PutData;
 
 import java.io.IOException;
@@ -41,7 +43,7 @@ public class smartdoor_unlocked_pages extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.smartdoor_unlocked_pages);
 
-        address =smartdoor_locked_pages.address;
+        address = smartdoor_locked_pages.address;
 
         ActionBar actionBar = getSupportActionBar();
 
@@ -63,7 +65,7 @@ public class smartdoor_unlocked_pages extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String door = smartdoor_locked_pages.door;
-
+                String username = Login.username;
 
                 if (!door.equals(""))
                 {
@@ -71,12 +73,14 @@ public class smartdoor_unlocked_pages extends AppCompatActivity {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            String[] field = new String[1];
-                            field[0] = "door";
+                            String[] field = new String[2];
+                            field[0] = "username";
+                            field[1] = "door";
 
                             //Creating array for data
-                            String[] data = new String[1];
-                            data[0] = door;
+                            String[] data = new String[2];
+                            data[0] = username;
+                            data[1] = door;
 
                             PutData putData = new PutData("http://192.168.50.173:8080/LoginSystem/verifypass.php", "POST", field, data);
                             if (putData.startPut()) {
@@ -86,7 +90,8 @@ public class smartdoor_unlocked_pages extends AppCompatActivity {
                                     {
                                         locked();
                                         Toast.makeText(smartdoor_unlocked_pages.this, "Door Locked", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(smartdoor_unlocked_pages.this, smartdoor_locked_pages.class));
+                                        //startActivity(new Intent(smartdoor_unlocked_pages.this, smartdoor_locked_pages.class));
+                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     }
                                     else
                                     {

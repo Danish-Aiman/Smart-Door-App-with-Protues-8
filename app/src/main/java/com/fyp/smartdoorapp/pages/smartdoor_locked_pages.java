@@ -20,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.fyp.smartdoorapp.R;
 import com.fyp.smartdoorapp.connection.DeviceList;
+import com.fyp.smartdoorapp.loginpage.Login;
 import com.fyp.smartdoorapp.loginpage.PutData;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class smartdoor_locked_pages extends AppCompatActivity {
     public static String door;
     public static String address = null;
     private ProgressDialog progress;
-    BluetoothAdapter myBluetooth = null;
+    public static BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
     private boolean BtConnected = false;
 
@@ -58,6 +59,7 @@ public class smartdoor_locked_pages extends AppCompatActivity {
                 ex.printStackTrace();
             }
         }
+
         new BTConnect().execute();
 
         unlock_btn = findViewById(R.id.unlock_btn);
@@ -77,6 +79,7 @@ public class smartdoor_locked_pages extends AppCompatActivity {
                     @Override public void onClick(DialogInterface dialog, int which) {
 
                         door = String.valueOf(psc_text.getText());
+                        String username = Login.username;
 
                         if (!door.equals(""))
                         {
@@ -84,12 +87,14 @@ public class smartdoor_locked_pages extends AppCompatActivity {
                             handler.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    String[] field = new String[1];
-                                    field[0] = "door";
+                                    String[] field = new String[2];
+                                    field[0] = "username";
+                                    field[1] = "door";
 
                                     //Creating array for data
-                                    String[] data = new String[1];
-                                    data[0] = door;
+                                    String[] data = new String[2];
+                                    data[0] = username;
+                                    data[1] = door;
 
                                     PutData putData = new PutData("http://192.168.50.173:8080/LoginSystem/verifypass.php", "POST", field, data);
                                     if (putData.startPut()) {
@@ -136,15 +141,9 @@ public class smartdoor_locked_pages extends AppCompatActivity {
             }
             catch (IOException e)
             {
-                message("Failed to unlock, Please Try Again");
+                Toast.makeText(getApplicationContext(),"Failed to unlock, Please Try Again", Toast.LENGTH_LONG).show();
             }
         }
-    }
-
-    //Fastest way to call Toast
-    private void message(String text)
-    {
-        Toast.makeText(getApplicationContext(),text,Toast.LENGTH_LONG).show();
     }
 
     private class BTConnect extends AsyncTask<Void, Void, Void>  // UI thread
@@ -189,19 +188,19 @@ public class smartdoor_locked_pages extends AppCompatActivity {
         }
 
         @Override
-        //After the doInBackground functiom, it checks if everything is fine
+        //After the doInBackground function, it checks if everything is fine
         protected void onPostExecute(Void result)
         {
             super.onPostExecute(result);
 
             if (!ConnectSuccess)
             {
-                message("Connection Failed!!. Is it a SPP Bluetooth? Please Try again.");
+                Toast.makeText(getApplicationContext(),"Connection Failed!!. Please Try again",Toast.LENGTH_LONG).show();
                 finish();
             }
             else
             {
-                message("The Device is Connected.");
+                Toast.makeText(getApplicationContext(),"The Device is Connected", Toast.LENGTH_LONG).show();
                 BtConnected = true;
             }
             progress.dismiss();

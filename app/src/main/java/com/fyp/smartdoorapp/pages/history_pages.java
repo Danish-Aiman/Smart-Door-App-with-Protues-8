@@ -18,9 +18,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.fyp.smartdoorapp.R;
+import com.fyp.smartdoorapp.adapters.Recycle;
 import com.fyp.smartdoorapp.adapters.RecycleAdapter;
+import com.fyp.smartdoorapp.loginpage.Login;
 import com.fyp.smartdoorapp.loginpage.PutData;
 
 import java.util.ArrayList;
@@ -28,11 +31,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class history_pages extends AppCompatActivity {
-    //ListView histopen;;
-    //ArrayList<String> history ;
-    //ArrayAdapter<String> arrayAdapter;
-    RecyclerView histopen;
-    List<String>history;
+    TextView text_item2;
+    RecyclerView histopen, addhist;
+    List<String>history, histlist;
+    SwipeRefreshLayout refresh;
+    String result;
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +58,13 @@ public class history_pages extends AppCompatActivity {
         }
 
         history = new ArrayList<>();
-        //histopen = findViewById(R.id.histopen);
+        histlist = new ArrayList<>();
         histopen = findViewById(R.id.histopen);
+        //addhist = findViewById(R.id.addhist);
+        text_item2 = findViewById(R.id.text_item2);
 
         final String door = smartdoor_locked_pages.door;
+        String username = Login.username;
 
         if (!door.equals(""))
         {
@@ -65,36 +72,44 @@ public class history_pages extends AppCompatActivity {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    String[] field = new String[1];
-                    field[0] = "door";
+                    String[] field = new String[2];
+                    field[0] = "username";
+                    field[1] = "door";
 
                     //Creating array for data
-                    String[] data = new String[1];
-                    data[0] = door;
+                    String[] data = new String[2];
+                    data[0] = username;
+                    data[1] = door;
 
                     PutData putData = new PutData("http://192.168.50.173:8080/LoginSystem/history.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
-                            String result = putData.getResult();
+                            result = putData.getResult();
                             {
                                 String listed = ("Door Unlocked : \n" + result).toString();
-                                history.add(listed);
-                                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+                                linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                                 histopen.setLayoutManager(linearLayoutManager);
                                 RecycleAdapter recycleAdapter = new RecycleAdapter(history_pages.this, (ArrayList<String>)history );
-                                recycleAdapter.updatedata((ArrayList<String>) history);
                                 histopen.setAdapter(recycleAdapter);
-                                //boolean array = history.add(list);
-                               // arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.textcolor_pages, Collections.singletonList(list));
-                                //arrayAdapter.setNotifyOnChange(array);
-                                //histopen.setAdapter(arrayAdapter);
+                                history.add(listed);
+
+                                refresh = findViewById(R.id.refresh);
+
+                                refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                                    @Override public void onRefresh() {
+                                        String list = ("Door Locked : \n" + result).toString();
+                                        //LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(history_pages.this);
+                                        //addhist.setLayoutManager(linearLayoutManager1);
+                                        //Recycle recycle = new Recycle(getApplicationContext(), (ArrayList<String>) history);
+                                        //addhist.setAdapter(recycle);
+                                        //histlist.add(list);
+                                        history.add(list);
+                                        history.add(listed);
+                                        recycleAdapter.notifyDataSetChanged();
+                                        refresh.setRefreshing(false);
+                                    }
+                                });
                             }
-                            /*
-                            else
-                            {
-                                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                            }
-                             */
                         }
                     }
                 }

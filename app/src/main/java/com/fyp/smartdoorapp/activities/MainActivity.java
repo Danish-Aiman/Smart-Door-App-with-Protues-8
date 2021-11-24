@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
 
+        textview_user = findViewById(R.id.textview_user);
+        textview_user.setText(username);
+
         setting_btn = findViewById(R.id.setting_btn);
         setting_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DeviceList.class));
+                //startActivity(new Intent(MainActivity.this, smartdoor_locked_pages.class));
             }
         });
 
@@ -72,9 +76,6 @@ public class MainActivity extends AppCompatActivity{
                 context.startActivity(new Intent(context, ScanActivity.class).putExtra("withSysApps", withSysApps));
             }
         });
-
-        textview_user = findViewById(R.id.textview_user);
-        textview_user.setText(username);
 
     }
     @Override

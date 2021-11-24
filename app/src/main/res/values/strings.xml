@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Smart Doors</string>
+    <string name="app_name">Doorry</string>
     <string name="scan">Scan</string>
     <string name="scanningApplications">Scanning Applications</string>
     <string name="system_app">System App</string>

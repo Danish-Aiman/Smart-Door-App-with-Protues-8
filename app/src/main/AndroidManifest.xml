@@ -21,7 +21,6 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
         tools:targetApi="q">
@@ -92,8 +91,6 @@
             android:name="com.fyp.smartdoorapp.pages.smartdoor_locked_pages"
             android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">
         </activity>
-
-        <activity android:name="com.fyp.smartdoorapp.connection.dooropen" />
 
         <activity android:name="com.fyp.smartdoorapp.pages.setting_pages"
             android:parentActivityName="com.fyp.smartdoorapp.activities.MainActivity">
