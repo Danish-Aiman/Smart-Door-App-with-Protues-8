@@ -1,6 +1,5 @@
 <?php
 require 'RSA_Encryption.php';
-//require 'AES_Encryption.php';
 
 class Database
 {
@@ -62,7 +61,6 @@ class Database
         $username = $this->prepareData($username);
         $password = $this->prepareData($password);
         $rsa = new RSA_Encryption();
-        //$aes = new AES_Encryption();
 
         //Aes private key
         $aes_private_secret_key = '1f4276388ad3214c873428dbef42243f';
@@ -101,8 +99,9 @@ class Database
     {
         $username = $this->prepareData($username);
         $password = $this->prepareData($password);
+        $door = $this->prepareData($door);
+
         $rsa = new RSA_Encryption();
-        //$aes = new AES_Encryption();
 
         //Aes private key
         $aes_private_secret_key = '1f4276388ad3214c873428dbef42243f';
@@ -112,13 +111,13 @@ class Database
         
        //Encrypt data using AES algorithm
         $first_encrypt = $this->encrypt_aes($password, $aes_private_secret_key);
+        $frst_encrypt = $this->encrypt_aes($door, $aes_private_secret_key);
 
         //Encrypt data using RSA algorithm
         $second_encrypt = $rsa->rsa_encrypt($first_encrypt, $rsa_publickey);
-        //$second_encrypt = openssl_public_encrypt($first_encrypt, $encrypt, $rsa_publickey);
+        $snd_encrypt = $rsa->rsa_encrypt($frst_encrypt, $rsa_publickey);
     
-        $door = $this->prepareData($door);
-        $this->sql = "INSERT INTO  " . $table . " (username, password, door_passcode) VALUES ('" . $username . "','" . $second_encrypt . "','" . $door . "')";
+        $this->sql = "INSERT INTO  " . $table . " (username, password, door_passcode) VALUES ('" . $username . "','" . $second_encrypt . "','" . $snd_encrypt . "')";
         if (pg_query($this->connect, $this->sql)) 
         {
             return true;
@@ -131,7 +130,22 @@ class Database
     {
         $username = $this->prepareData($username);
         $door = $this->prepareData($door);
-        $this->sql = "update ". $table. " set door_passcode = ". $newdoor . " where username = '". $username . "' and ". " door_passcode = '". $door . "'";
+
+        $rsa = new RSA_Encryption();
+
+        //Aes private key
+        $aes_private_secret_key = '1f4276388ad3214c873428dbef42243f';
+
+        //Rsa private key
+        $rsa_publickey = $rsa->public_key;
+        
+        //Encrypt data using AES algorithm
+        $priv_encrypt = $this->encrypt_aes($newdoor, $aes_private_secret_key);
+
+        //Encrypt data using RSA algorithm
+        $public_encrypt = $rsa->rsa_encrypt($priv_encrypt, $rsa_publickey);
+        
+        $this->sql = "update ". $table. " set door_passcode = ". $public_encrypt . " where username = '". $username . "' and ". " door_passcode = '". $door . "'";
         if (pg_query($this->connect, $this->sql)) 
         {
             return true;
@@ -139,19 +153,39 @@ class Database
         else return false;
     }
 
-    function verifypass ($table, $door)
+    function verifypass ($table, $door, $username)
     {
         $door = $this->prepareData($door);
-        $this->sql = "select * from " . $table . " where door_passcode = '" . $door . "'";
+        $username = $this->prepareData($username);
+
+       // $this->sql = "select * from " . $table . " where door_passcode = '" . $door . "'";
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
         $result = pg_query($this->connect, $this->sql);
         $row = pg_fetch_assoc($result);
+
+        $rsa = new RSA_Encryption();
+        
+        //Aes private key
+        $aes_private_secret_key = '1f4276388ad3214c873428dbef42243f';
+
+        //Rsa private key
+        $rsa_privatekey = $rsa->private_key;
+
+
         if (pg_num_rows($result) != 0) 
         {
             $dbdoor = $row['door_passcode'];
-            if($dbdoor == $door)
+
+            //Decrypt data using RSA algorithm
+            $first_dr = $rsa->rsa_decrypt($dbdoor, $rsa_privatekey);
+
+            //Decrypt data using AES algorithm
+            $second_dr = $this->decrypt_aes($first_dr, $aes_private_secret_key);
+
+            if($door == $second_dr)
             {
                 $unlock = true;
-                $sql = "update ". $table. " set door_status = date_trunc('second',now()) where door_passcode = '". $door . "'";
+                $sql = "update ". $table. " set door_status = date_trunc('second',now()) where door_passcode = '". $dbdoor . "'";
                 if (pg_query($this->connect, $sql)) 
                 {
                     return true;
@@ -175,17 +209,35 @@ class Database
         else return false;
     }
 
-    function history ($table, $door)
+    function history ($table, $door, $username)
     {
         $door = $this->prepareData($door);
-        $this->sql = "select * from " . $table . " where door_passcode = '" . $door . "'";
+        $username = $this->prepareData($username);
+
+        //$this->sql = "select * from " . $table . " where door_passcode = '" . $door . "'";
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
         $result = pg_query($this->connect, $this->sql);
         $row = pg_fetch_assoc($result);
+
+        $rsa = new RSA_Encryption();
+        
+        //Aes private key
+        $aes_private_secret_key = '1f4276388ad3214c873428dbef42243f';
+
+        //Rsa private key
+        $rsa_privatekey = $rsa->private_key;
         
         if($result && pg_num_rows($result) > 0)
             {
                 $dbdoor = $row['door_passcode'];
-                if($dbdoor == $door)
+                
+                //Decrypt data using RSA algorithm
+                $first_dr = $rsa->rsa_decrypt($dbdoor, $rsa_privatekey);
+
+                //Decrypt data using AES algorithm
+                $second_dr = $this->decrypt_aes($first_dr, $aes_private_secret_key);
+
+                if($door == $second_dr)
                 {
                     $status = $row['door_status'];
                     return $status;
