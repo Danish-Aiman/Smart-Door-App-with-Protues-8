@@ -1,9 +1,11 @@
 <?php
-require "DataBase.php";
-$db = new DataBase();
-if (isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
+require "Database.php";
+
+$db = new Database();
+
+if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['door'])) {
     if ($db->dbConnect()) {
-        if ($db->signUp("users", $_POST['fullname'], $_POST['email'], $_POST['username'], $_POST['password'])) {
+        if ($db->signUp("smartdoor_user", $_POST['username'], $_POST['password'], $_POST['door'])) {
             echo "Sign Up Success";
         } else echo "Sign up Failed";
     } else echo "Error: Database connection";
