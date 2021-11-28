@@ -86,7 +86,7 @@ public class Login extends AppCompatActivity{
                             String[] data = new String[2];
                             data[0] = username;
                             data[1] = password;
-                            PutData putData = new PutData("http://192.168.50.173:8080/LoginSystem/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.23.38:8080/LoginSystem/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);

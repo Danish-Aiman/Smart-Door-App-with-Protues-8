@@ -97,7 +97,7 @@ public class setting_pages extends AppCompatActivity {
                                     data[1] = door;
                                     data[2] = newdoor;
 
-                                    PutData putData = new PutData("http://192.168.50.173:8080/LoginSystem/update.php", "POST", field, data);
+                                    PutData putData = new PutData("http://192.168.23.38:8080/LoginSystem/update.php", "POST", field, data);
                                     if (putData.startPut()) {
                                         if (putData.onComplete()) {
                                             String result = putData.getResult();
@@ -150,7 +150,7 @@ public class setting_pages extends AppCompatActivity {
                             String[] data = new String[1];
                             data[0] = username;
 
-                            PutData putData = new PutData("http://192.168.50.173:8080/LoginSystem/delete.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.23.38:8080/LoginSystem/delete.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();

@@ -44,7 +44,7 @@ public class Recycle  extends RecyclerView.Adapter {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            text_item2 = itemView.findViewById(R.id.text_item2);
+            //text_item2 = itemView.findViewById(R.id.text_item2);
         }
     }
 }

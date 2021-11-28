@@ -36,7 +36,7 @@ public class RecycleAdapter extends RecyclerView.Adapter {
 
     @Override public int getItemCount() {
 
-        return history.size()-1;
+        return history.size();
     }
 
     public class  ViewHolder extends RecyclerView.ViewHolder{
@@ -47,7 +47,7 @@ public class RecycleAdapter extends RecyclerView.Adapter {
             super(itemView);
 
             text_item = itemView.findViewById(R.id.text_item);
-            text_item2 = itemView.findViewById(R.id.text_item2);
+            //text_item2 = itemView.findViewById(R.id.text_item2);
         }
     }
 }
