@@ -17,16 +17,28 @@
       android:layout_marginLeft="342dp" />
 
   <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/arial"
+      android:gravity="center"
+      android:text="Doorry"
+      android:textColor="@color/white"
+      android:textSize="35sp"
+      android:textStyle="bold"
+      android:layout_marginTop="80sp"
+      />
+
+  <TextView
       android:id="@+id/textview_user"
       android:layout_width="284dp"
-      android:layout_height="62.5dp"
+      android:layout_height="46dp"
       android:layout_marginStart="67dp"
-      android:layout_marginTop="145dp"
+      android:layout_marginLeft="67dp"
+      android:layout_marginTop="155dp"
       android:fontFamily="@font/arial"
       android:textColor="@color/white"
       android:textSize="25sp"
-      android:textStyle="bold"
-      android:layout_marginLeft="67dp" />
+      android:textStyle="bold" />
 
   <Button
       android:id="@+id/history_btn"
@@ -163,12 +175,20 @@
       android:layout_marginLeft="256dp" />
 
   <ImageView
-      android:layout_width="104dp"
-      android:layout_height="94dp"
-      android:layout_marginStart="155dp"
+      android:layout_width="80dp"
+      android:layout_height="wrap_content"
       android:layout_marginTop="575dp"
       android:src="@drawable/logo" />
 
-
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/arial"
+      android:text="© 2021 GMI. All Rights Reserved."
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:layout_marginLeft="74dp"
+      android:layout_marginTop="600dp"
+      android:layout_marginStart="60dp" />
 
 </FrameLayout>

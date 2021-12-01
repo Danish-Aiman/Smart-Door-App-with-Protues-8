@@ -22,21 +22,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/layout_login1"
-                android:layout_marginTop="440dp"
+                android:layout_marginTop="516dp"
                 android:contentDescription="@string/layout_login"
                 />
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:contentDescription="@string/layout_login1"
                 android:src="@drawable/layout_login" />
-
-            <ImageView
-                android:layout_width="104dp"
-                android:layout_height="94dp"
-                android:layout_marginStart="155dp"
-                android:src="@drawable/logo" />
 
             <ProgressBar
                 android:id="@+id/progress"
@@ -54,6 +48,21 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arial"
                 android:gravity="center"
+                android:text="Doorry"
+                android:textColor="@color/login_btn_color"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/userinput"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="75sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arial"
+                android:gravity="center"
                 android:text="@string/login_account"
                 android:textColor="@color/bgColor"
                 android:textSize="35sp"
@@ -61,7 +70,7 @@
                 app:layout_constraintBottom_toTopOf="@id/userinput"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="110sp"
+                android:layout_marginTop="150sp"
                 />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -69,7 +78,7 @@
                 android:layout_width="match_parent"
 
                 android:layout_height="50dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="230dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="280dp"
+                android:layout_marginTop="310dp"
                 android:layout_marginRight="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -127,8 +136,8 @@
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="227dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="372dp"
                 android:layout_marginStart="90dp"
+                android:layout_marginTop="398dp"
                 android:background="@drawable/login_btn_shape"
                 android:fontFamily="@font/arial"
                 android:text="@string/login"
@@ -141,7 +150,7 @@
                 android:id="@+id/signUpText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="458dp"
+                android:layout_marginTop="490dp"
                 android:layout_marginStart="106dp"
                 android:fontFamily="@font/arial"
                 android:text="@string/signuphere"
@@ -150,6 +159,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loginbtn"
                 tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="610dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arial"
+                android:text="© 2021 GMI. All Rights Reserved."
+                android:textSize="15sp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="630dp"
+                android:layout_marginStart="60dp" />
+
         </FrameLayout>
     </ScrollView>
 </HorizontalScrollView>

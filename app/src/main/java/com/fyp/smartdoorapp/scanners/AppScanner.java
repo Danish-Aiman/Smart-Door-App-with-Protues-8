@@ -181,7 +181,7 @@ public class AppScanner extends AsyncTask<Void, String, Void> {
                 notificationBuilder.setSmallIcon(R.drawable.ic_notification)
                         .setAutoCancel(true)
                         .setVibrate(new long[]{250, 250, 250, 250})
-                        .setContentTitle("LibreAV")
+                        .setContentTitle("Anti-Spyware")
                         .setContentText(appName + contextRef.get().getString(R.string.is) + prediction)
                         .setContentIntent(contentIntent1)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)

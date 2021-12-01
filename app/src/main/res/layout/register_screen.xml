@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+<HorizontalScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,13 +21,13 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:src="@drawable/layout_login1"
-          android:layout_marginTop="480dp"
+          android:layout_marginTop="518dp"
           android:contentDescription="@string/layout_login"
           />
 
       <ImageView
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
           android:contentDescription="@string/layout_login1"
           android:src="@drawable/layout_register" />
 
@@ -41,16 +42,26 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/password" />
 
-      <ImageView
-          android:layout_width="104dp"
-          android:layout_height="94dp"
-          android:layout_marginStart="155dp"
-          android:src="@drawable/logo" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/arial"
+          android:gravity="center"
+          android:text="Doorry"
+          android:textColor="@color/login_btn_color"
+          android:textSize="40sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toTopOf="@id/userinput"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginTop="50sp"
+          />
+
 
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginTop="85sp"
+          android:layout_marginTop="118sp"
           android:fontFamily="@font/arial"
           android:gravity="center"
           android:text="@string/create_account"
@@ -65,7 +76,7 @@
           android:id="@+id/userinput"
           android:layout_width="match_parent"
           android:layout_height="50dp"
-          android:layout_marginTop="160dp"
+          android:layout_marginTop="188dp"
           android:layout_marginLeft="30dp"
           android:layout_marginRight="30dp"
           app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +104,7 @@
           android:layout_width="match_parent"
           android:layout_height="50dp"
           android:layout_marginLeft="30dp"
-          android:layout_marginTop="240dp"
+          android:layout_marginTop="264dp"
           android:layout_marginRight="30dp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintHorizontal_bias="0.0"
@@ -119,7 +130,7 @@
           android:layout_width="match_parent"
           android:layout_height="50dp"
           android:layout_marginLeft="30dp"
-          android:layout_marginTop="322dp"
+          android:layout_marginTop="344dp"
           android:layout_marginRight="30dp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintHorizontal_bias="0.0"
@@ -146,7 +157,7 @@
           android:layout_width="227dp"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
-          android:layout_marginTop="140dp"
+          android:layout_marginTop="124dp"
           android:background="@drawable/login_btn_shape"
           android:text="@string/signup"
           android:fontFamily="@font/arial"
@@ -159,7 +170,7 @@
           android:id="@+id/loginText"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginTop="200dp"
+          android:layout_marginTop="188dp"
           android:fontFamily="@font/arial"
           android:text="@string/loginhere"
           app:layout_constraintEnd_toEndOf="parent"
@@ -168,6 +179,23 @@
           app:layout_constraintTop_toBottomOf="@id/loginbtn"
           android:layout_gravity="center"
           tools:targetApi="jelly_bean" />
+
+      <ImageView
+          android:layout_width="60dp"
+          android:layout_height="50dp"
+          android:layout_marginTop="598dp"
+          android:src="@drawable/logo" />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/arial"
+          android:text="© 2021 GMI. All Rights Reserved."
+          android:textSize="15sp"
+          android:layout_marginLeft="60dp"
+          android:layout_marginTop="616dp"
+          android:layout_marginStart="60dp" />
+
     </FrameLayout>
   </ScrollView>
 </HorizontalScrollView>

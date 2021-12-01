@@ -73,23 +73,21 @@ public class history_pages extends AppCompatActivity {
                     data[0] = username;
                     data[1] = door;
 
-                    PutData putData = new PutData("http://192.168.23.38:8080/LoginSystem/history.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.43.242/LoginSystem/history.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             result = putData.getResult();
                             {
-                                String dropen = ("Door Unlocked : \n" + result).toString();
-                                String drclosed = ("Door Locked : \n" + result).toString();
-                                //ArrayAdapter adapter = new ArrayAdapter(history_pages.this, R.layout.textcolor_pages, history);
-                                //list.setAdapter(adapter);
+                                String dropen = ("Door Unlocked : \n" + result);
+                                String drclosed = ("Door Locked : \n" + result);
                                 linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                                 histopen.setLayoutManager(linearLayoutManager);
                                 RecycleAdapter recycleAdapter = new RecycleAdapter(history_pages.this, (ArrayList<String>)history );
                                 histopen.setAdapter(recycleAdapter);
                                 history.add(dropen);
                                 history.add(drclosed);
-                                recycleAdapter.notifyItemChanged(0);
-                                //recycleAdapter.notifyDataSetChanged();
+                                //recycleAdapter.notifyItemChanged(0);
+                                recycleAdapter.notifyDataSetChanged();
                                 //adapter.notifyDataSetChanged();
 
                                 refresh = findViewById(R.id.refresh);

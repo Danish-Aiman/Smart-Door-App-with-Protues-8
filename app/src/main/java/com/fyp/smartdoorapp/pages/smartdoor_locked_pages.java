@@ -96,7 +96,7 @@ public class smartdoor_locked_pages extends AppCompatActivity {
                                     data[0] = username;
                                     data[1] = door;
 
-                                    PutData putData = new PutData("http://192.168.23.38:8080/LoginSystem/verifypass.php", "POST", field, data);
+                                    PutData putData = new PutData("http://192.168.50.173/LoginSystem/verifypass.php", "POST", field, data);
                                     if (putData.startPut()) {
                                         if (putData.onComplete()) {
                                             String result = putData.getResult();
@@ -141,7 +141,7 @@ public class smartdoor_locked_pages extends AppCompatActivity {
             }
             catch (IOException e)
             {
-                Toast.makeText(getApplicationContext(),"Failed to unlock, Please Try Again", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),"Failed to unlock, Please Try Again", Toast.LENGTH_LONG).show();
             }
         }
     }
