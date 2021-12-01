@@ -130,6 +130,11 @@ class Database
     {
         $username = $this->prepareData($username);
         $door = $this->prepareData($door);
+        $newdoor = $this->prepareData($newdoor);
+
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
+        $result = pg_query($this->connect, $this->sql);
+        $row = pg_fetch_assoc($result);
 
         $rsa = new RSA_Encryption();
 
@@ -144,13 +149,21 @@ class Database
 
         //Encrypt data using RSA algorithm
         $public_encrypt = $rsa->rsa_encrypt($priv_encrypt, $rsa_publickey);
+
+        //$rsa_privatekey = $rsa->private_key;
         
-        $this->sql = "update ". $table. " set door_passcode = ". $public_encrypt . " where username = '". $username . "' and ". " door_passcode = '". $door . "'";
-        if (pg_query($this->connect, $this->sql)) 
+        if (pg_num_rows($result) != 0) 
         {
-            return true;
+            $dbdoor = $row['door_passcode'];
+
+            $sql = "update ". $table. " set door_passcode = '". $public_encrypt . "' where username = '". $username . "' and ". " door_passcode = '". $dbdoor . "'";
+            if (pg_query($this->connect, $sql)) 
+            {
+                return true;
+            }
+            else return false;
+            
         }
-        else return false;
     }
 
     function verifypass ($table, $door, $username)
@@ -185,11 +198,11 @@ class Database
             if($door == $second_dr)
             {
                 $unlock = true;
-                /*$sql = "update ". $table. " set door_status = date_trunc('second',now()) where door_passcode = '". $dbdoor . "'";
+                $sql = "update ". $table. " set door_status = date_trunc('second',now()) where door_passcode = '". $dbdoor . "'";
                 if (pg_query($this->connect, $sql)) 
                 {
                     return true;
-                }*/
+                }
             }
             else $unlock = false;
         }
@@ -214,10 +227,10 @@ class Database
         $door = $this->prepareData($door);
         $username = $this->prepareData($username);
 
-        $this->sql = "update ". $table. " set door_status = date_trunc('second',now()) where username = '". $username . "'";
-        //$this->sql = "select * from " . $table . " where username = '" . $username . "'";
-        //$result = pg_query($this->connect, $this->sql);
-        //$row = pg_fetch_assoc($result);
+        //$this->sql = "select * from " . $table . " where door_passcode = '" . $door . "'";
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
+        $result = pg_query($this->connect, $this->sql);
+        $row = pg_fetch_assoc($result);
 
         $rsa = new RSA_Encryption();
         
@@ -226,33 +239,7 @@ class Database
 
         //Rsa private key
         $rsa_privatekey = $rsa->private_key;
-
-        if (pg_query($this->connect, $this->sql)) 
-        {
-            $update = true;
-            $sql = "select * from " . $table . " where username = '" . $username . "'";
-            $result = pg_query($this->connect, $sql);
-            $row = pg_fetch_assoc($result);
-            if($result && pg_num_rows($result) > 0)
-            {
-                $dbdoor = $row['door_passcode'];
-                
-                //Decrypt data using RSA algorithm
-                $first_dr = $rsa->rsa_decrypt($dbdoor, $rsa_privatekey);
-
-                //Decrypt data using AES algorithm
-                $second_dr = $this->decrypt_aes($first_dr, $aes_private_secret_key);
-
-                if($door == $second_dr)
-                {
-                    $status = $row['door_status'];
-                    return $status;
-                }
-        }
-        else $update = false;
-
-        return $update;
-        /*
+        
         if($result && pg_num_rows($result) > 0)
             {
                 $dbdoor = $row['door_passcode'];
@@ -270,7 +257,7 @@ class Database
                 }
                 else return false;
             }
-            else return false;*/
-
+            else return false;
+        }
 }
 ?>

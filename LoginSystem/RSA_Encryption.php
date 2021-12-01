@@ -20,7 +20,7 @@ rgHUlpxEQKjutk+x0Cmv42JZ6CZLH12jAiBXJY4CUDsReFEFEZMAeRG4rv6qQWfz
 u1ZewPFiRfD/AZJXPRoTS4VuXpdVVSGZyuGZj8ZnJBw=
 -----END RSA PRIVATE KEY-----';
 
-    function rsa_encrypt($msg, $public_key)
+    function rsa_encrypt($msg, $public_key) 
     {
         if (openssl_public_encrypt($msg, $encrypt, $public_key))
             $msg = base64_encode($encrypt);
