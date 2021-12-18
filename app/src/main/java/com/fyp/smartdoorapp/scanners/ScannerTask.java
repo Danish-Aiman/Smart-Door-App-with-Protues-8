@@ -291,7 +291,7 @@ public class ScannerTask extends AsyncTask<Void, String, Void> {
         }
         notificationBuilder.setSmallIcon(R.drawable.ic_notification)
                 .setOngoing(true)
-                .setContentTitle("Anti-Spyware")
+                .setContentTitle("Spyware Scanner")
                 .setContentText(contextRef.get().getString(R.string.scanningApplications))
                 .setProgress(0, 0, true);
         notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());

@@ -151,7 +151,7 @@ public class AppScanner extends AsyncTask<Void, String, Void> {
             String CHANNEL_ID = "channel_100";
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(contextRef.get(), CHANNEL_ID);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                String CHANNEL_NAME = "ANTI SPYWARE";
+                String CHANNEL_NAME = "SPYWARE SCANNER";
                 NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
                 notificationManager.createNotificationChannel(mChannel);
             }
@@ -167,7 +167,7 @@ public class AppScanner extends AsyncTask<Void, String, Void> {
             if (prediction.equalsIgnoreCase(contextRef.get().getString(R.string.safe))) {
                 notificationBuilder.setSmallIcon(R.drawable.ic_notification)
                         .setAutoCancel(true)
-                        .setContentTitle("Anti-Spyware")
+                        .setContentTitle("Spyware Scanner")
                         .setContentIntent(contentIntent)
                         .setContentText(appName + contextRef.get().getString(R.string.is) + prediction)
                         .setPriority(NotificationCompat.PRIORITY_HIGH);
@@ -181,7 +181,7 @@ public class AppScanner extends AsyncTask<Void, String, Void> {
                 notificationBuilder.setSmallIcon(R.drawable.ic_notification)
                         .setAutoCancel(true)
                         .setVibrate(new long[]{250, 250, 250, 250})
-                        .setContentTitle("Anti-Spyware")
+                        .setContentTitle("Spyware Scanner")
                         .setContentText(appName + contextRef.get().getString(R.string.is) + prediction)
                         .setContentIntent(contentIntent1)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)

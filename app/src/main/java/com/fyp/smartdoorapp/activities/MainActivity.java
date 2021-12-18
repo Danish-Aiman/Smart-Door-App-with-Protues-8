@@ -27,6 +27,8 @@ import com.github.angads25.filepicker.view.FilePickerDialog;
 
 import com.fyp.smartdoorapp.R;
 
+import java.util.Locale;
+
 
 public class MainActivity extends AppCompatActivity{
 
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity{
     private Context context = this;
     private boolean withSysApps = false;
     TextView textview_user;
-    String username = Login.username + " Control Panel";
+    String username = Login.username +"'s Home";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,10 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.main_screen);
 
         textview_user = findViewById(R.id.textview_user);
-        textview_user.setText(username);
+
+        String output = username.substring(0, 1).toUpperCase() + username.substring(1);
+
+        textview_user.setText(output);
 
         setting_btn = findViewById(R.id.setting_btn);
         setting_btn.setOnClickListener(new View.OnClickListener() {

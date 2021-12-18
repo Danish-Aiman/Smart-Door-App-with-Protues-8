@@ -34,12 +34,12 @@ public class RealTimeService extends Service {
         String CHANNEL_ID = "channel_100";
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            String CHANNEL_NAME = "ANTI SPYWARE";
+            String CHANNEL_NAME = "SPYWARE SCANNER";
             NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(mChannel);
             notificationBuilder.setSmallIcon(R.drawable.ic_notification)
                     .setOngoing(true)
-                    .setContentTitle("Anti-Spyware")
+                    .setContentTitle("Spyware Scanner")
                     .setContentText(getApplicationContext().getString(R.string.real_time_scan_on));
             Intent intent = new Intent(this, MainActivity.class);
             PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
